@@ -80,3 +80,4 @@ fbcode/
 fbcode
 buckifier/*.pyc
 buckifier/__pycache__
+cmake-build-debug
