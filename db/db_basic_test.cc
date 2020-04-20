@@ -1245,7 +1245,7 @@ TEST_P(DBMultiGetTestWithParam, MultiGetMultiCFSnapshot) {
   }
 }
 
-INSTANTIATE_TEST_CASE_P(DBMultiGetTestWithParam, DBMultiGetTestWithParam,
+INSTANTIATE_TEST_SUITE_P(DBMultiGetTestWithParam, DBMultiGetTestWithParam,
                         testing::Bool());
 
 TEST_F(DBBasicTest, MultiGetBatchedSimpleUnsorted) {
@@ -1547,7 +1547,7 @@ TEST_P(MultiGetPrefixExtractorTest, Batched) {
   ASSERT_EQ(get_perf_context()->bloom_sst_hit_count, 4);
 }
 
-INSTANTIATE_TEST_CASE_P(MultiGetPrefix, MultiGetPrefixExtractorTest,
+INSTANTIATE_TEST_SUITE_P(MultiGetPrefix, MultiGetPrefixExtractorTest,
                         ::testing::Bool());
 
 #ifndef ROCKSDB_LITE
@@ -1639,7 +1639,7 @@ TEST_P(DBMultiGetRowCacheTest, MultiGetBatched) {
   } while (ChangeCompactOptions());
 }
 
-INSTANTIATE_TEST_CASE_P(DBMultiGetRowCacheTest, DBMultiGetRowCacheTest,
+INSTANTIATE_TEST_SUITE_P(DBMultiGetRowCacheTest, DBMultiGetRowCacheTest,
                         testing::Values(true, false));
 
 TEST_F(DBBasicTest, GetAllKeyVersions) {
@@ -2180,7 +2180,7 @@ TEST_P(DBBasicTestWithParallelIO, MultiGetWithMissingFile) {
   SyncPoint::GetInstance()->DisableProcessing();
 }
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     ParallelIO, DBBasicTestWithParallelIO,
     // Params are as follows -
     // Param 0 - Compressed cache enabled
@@ -2524,7 +2524,7 @@ TEST_P(DBBasicTestWithTimestampWithParam, PutAndGet) {
   }
 }
 
-INSTANTIATE_TEST_CASE_P(Timestamp, DBBasicTestWithTimestampWithParam,
+INSTANTIATE_TEST_SUITE_P(Timestamp, DBBasicTestWithTimestampWithParam,
                         ::testing::Bool());
 
 }  // namespace rocksdb

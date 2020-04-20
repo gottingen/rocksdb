@@ -741,10 +741,10 @@ TEST_P(DBAtomicFlushTest, CFDropRaceWithWaitForFlushMemTables) {
   SyncPoint::GetInstance()->DisableProcessing();
 }
 
-INSTANTIATE_TEST_CASE_P(DBFlushDirectIOTest, DBFlushDirectIOTest,
+INSTANTIATE_TEST_SUITE_P(DBFlushDirectIOTest, DBFlushDirectIOTest,
                         testing::Bool());
 
-INSTANTIATE_TEST_CASE_P(DBAtomicFlushTest, DBAtomicFlushTest, testing::Bool());
+INSTANTIATE_TEST_SUITE_P(DBAtomicFlushTest, DBAtomicFlushTest, testing::Bool());
 
 }  // namespace rocksdb
 

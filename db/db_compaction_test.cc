@@ -4622,7 +4622,7 @@ TEST_F(DBCompactionTest, CompactionLimiter) {
   ASSERT_OK(dbfull()->TEST_WaitForCompact());
 }
 
-INSTANTIATE_TEST_CASE_P(DBCompactionTestWithParam, DBCompactionTestWithParam,
+INSTANTIATE_TEST_SUITE_P(DBCompactionTestWithParam, DBCompactionTestWithParam,
                         ::testing::Values(std::make_tuple(1, true),
                                           std::make_tuple(1, false),
                                           std::make_tuple(4, true),
@@ -4660,7 +4660,7 @@ TEST_P(DBCompactionDirectIOTest, DirectIO) {
   delete options.env;
 }
 
-INSTANTIATE_TEST_CASE_P(DBCompactionDirectIOTest, DBCompactionDirectIOTest,
+INSTANTIATE_TEST_SUITE_P(DBCompactionDirectIOTest, DBCompactionDirectIOTest,
                         testing::Bool());
 
 class CompactionPriTest : public DBTestBase,
@@ -4706,7 +4706,7 @@ TEST_P(CompactionPriTest, Test) {
   }
 }
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     CompactionPriTest, CompactionPriTest,
     ::testing::Values(CompactionPri::kByCompensatedSize,
                       CompactionPri::kOldestLargestSeqFirst,

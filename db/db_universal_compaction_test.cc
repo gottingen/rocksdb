@@ -748,7 +748,7 @@ TEST_P(DBTestUniversalCompactionMultiLevels, UniversalCompactionTrivialMove) {
   rocksdb::SyncPoint::GetInstance()->DisableProcessing();
 }
 
-INSTANTIATE_TEST_CASE_P(DBTestUniversalCompactionMultiLevels,
+INSTANTIATE_TEST_SUITE_P(DBTestUniversalCompactionMultiLevels,
                         DBTestUniversalCompactionMultiLevels,
                         ::testing::Combine(::testing::Values(3, 20),
                                            ::testing::Bool()));
@@ -938,7 +938,7 @@ TEST_P(DBTestUniversalCompactionParallel, PickByFileNumberBug) {
   EXPECT_GE(total_picked_compactions, 2);
 }
 
-INSTANTIATE_TEST_CASE_P(DBTestUniversalCompactionParallel,
+INSTANTIATE_TEST_SUITE_P(DBTestUniversalCompactionParallel,
                         DBTestUniversalCompactionParallel,
                         ::testing::Combine(::testing::Values(1, 10),
                                            ::testing::Values(false)));
@@ -1840,7 +1840,7 @@ TEST_P(DBTestUniversalCompaction, FinalSortedRunCompactFilesConflict) {
   compact_files_thread.join();
 }
 
-INSTANTIATE_TEST_CASE_P(UniversalCompactionNumLevels, DBTestUniversalCompaction,
+INSTANTIATE_TEST_SUITE_P(UniversalCompactionNumLevels, DBTestUniversalCompaction,
                         ::testing::Combine(::testing::Values(1, 3, 5),
                                            ::testing::Bool()));
 
@@ -1910,7 +1910,7 @@ TEST_P(DBTestUniversalManualCompactionOutputPathId,
                   .IsInvalidArgument());
 }
 
-INSTANTIATE_TEST_CASE_P(DBTestUniversalManualCompactionOutputPathId,
+INSTANTIATE_TEST_SUITE_P(DBTestUniversalManualCompactionOutputPathId,
                         DBTestUniversalManualCompactionOutputPathId,
                         ::testing::Combine(::testing::Values(1, 8),
                                            ::testing::Bool()));

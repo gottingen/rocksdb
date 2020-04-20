@@ -509,7 +509,7 @@ TEST_P(DBBloomFilterTestWithParam, BloomFilter) {
 }
 
 #ifndef ROCKSDB_VALGRIND_RUN
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     FormatDef, DBBloomFilterTestDefFormatVersion,
     ::testing::Values(
         std::make_tuple(BFP::kDeprecatedBlock, false,
@@ -517,7 +517,7 @@ INSTANTIATE_TEST_CASE_P(
         std::make_tuple(BFP::kAuto, true, test::kDefaultFormatVersion),
         std::make_tuple(BFP::kAuto, false, test::kDefaultFormatVersion)));
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     FormatDef, DBBloomFilterTestWithParam,
     ::testing::Values(
         std::make_tuple(BFP::kDeprecatedBlock, false,
@@ -525,7 +525,7 @@ INSTANTIATE_TEST_CASE_P(
         std::make_tuple(BFP::kAuto, true, test::kDefaultFormatVersion),
         std::make_tuple(BFP::kAuto, false, test::kDefaultFormatVersion)));
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     FormatLatest, DBBloomFilterTestWithParam,
     ::testing::Values(
         std::make_tuple(BFP::kDeprecatedBlock, false,
@@ -1189,7 +1189,7 @@ TEST_P(BloomStatsTestWithParam, BloomStatsTestWithIter) {
   ASSERT_EQ(expected_hits, get_perf_context()->bloom_sst_hit_count);
 }
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     BloomStatsTestWithParam, BloomStatsTestWithParam,
     ::testing::Values(std::make_tuple(BFP::kDeprecatedBlock, false),
                       std::make_tuple(BFP::kLegacyBloom, false),
